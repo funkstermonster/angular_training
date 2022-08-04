@@ -1,12 +1,16 @@
 
 //Singleton factory
 class BookshelfFactory {
-    private bookShelf: Bookshelf | null = null;
+    private static bookShelf: Bookshelf | null = null;
+
+    private constructor() {
+
+    }
     
-    getInstance(): Bookshelf {
-        if(this.bookShelf == null) {
-            return new Bookshelf()
+    public static getInstance(): Bookshelf {
+        if(BookshelfFactory.bookShelf == null) {
+            BookshelfFactory.bookShelf = new Bookshelf()
         }
-        return this.bookShelf;
+        return BookshelfFactory.bookShelf;
     }
 }
