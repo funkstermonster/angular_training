@@ -6,9 +6,7 @@ class Bookshelf {
     }
 
     getBooks(year: number): Array<Book> {
-
         return this.bookshelf.filter(item => item.releaseYear == year);
-
     }  
 
     getLightestAuthor(): string {
